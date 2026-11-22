@@ -1,0 +1,6 @@
+{
+  "name": "Bank Sampah Raja Lesmana Maju",
+  "description": "Aplikasi manajemen operasional, pencatatan timbangan setoran sampah, buku tabungan nasabah, katalog harga, dan penarikan saldo untuk Bank Sampah Raja Lesmana Maju.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8faf9;
+    color: #0f172a;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+#bs-print-sheet {
+  display: none;
+}
+
+@media print {
+  body.bs-custom-printing {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+  body.bs-custom-printing #root {
+    display: none !important;
+  }
+  body.bs-custom-printing #bs-print-sheet {
+    display: block !important;
+    width: 100%;
+    background: #ffffff;
+    color: #0f172a;
+  }
+
+  body:not(.bs-custom-printing) * {
+    visibility: hidden;
+  }
+  body:not(.bs-custom-printing) #printable-receipt,
+  body:not(.bs-custom-printing) #printable-receipt *,
+  body:not(.bs-custom-printing) #printable-member-card,
+  body:not(.bs-custom-printing) #printable-member-card * {
+    visibility: visible;
+  }
+  body:not(.bs-custom-printing) #printable-receipt,
+  body:not(.bs-custom-printing) #printable-member-card {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    color: #000000;
+    padding: 24px;
+    box-shadow: none;
+    border: none;
+  }
+}
